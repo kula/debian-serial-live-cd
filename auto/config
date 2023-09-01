@@ -1,0 +1,40 @@
+#!/bin/sh
+
+set -e
+
+case "$(dpkg --print-architecture)" in
+	amd64)
+		_SOURCE="true"
+		;;
+
+	i386)
+		_SOURCE="false"
+		;;
+esac
+
+# Isolinux Setup
+OLDPWD=$(pwd)
+cd config/bootloaders/isolinux
+
+ISO_BIOS_MOD="menu ldlinux libutil"
+
+for mod in ${ISO_BIOS_MOD}; do
+    if [ ! -h ${mod}.c32 ]; then
+	ln -s /usr/lib/syslinux/modules/bios/${mod}.c32
+    fi
+done
+
+cd ${OLDPWD}
+# End Isolinux Setup
+
+lb config noauto \
+	--clean \
+	--ignore-system-defaults \
+	--mode debian \
+	--debian-installer live \
+	--archive-areas "main contrib non-free non-free-firmware" \
+	--distribution bookworm \
+	--linux-packages "linux-image linux-headers" \
+	--source "${_SOURCE}" \
+	--bootappend-live "boot=live components console=ttyS0,115200" \
+"${@}"

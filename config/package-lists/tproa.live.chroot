@@ -1,0 +1,10 @@
+openssh-server
+debootstrap
+gdisk
+zfsutils-linux
+strace
+lsof
+vim-nox
+less
+ifenslave
+vlan
