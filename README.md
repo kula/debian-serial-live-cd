@@ -1,7 +1,6 @@
 # Debian Live CD with Serial Console
 
-This repository in combination with the [Debian Live Project]
-(https://live-team.pages.debian.net/live-manual/html/live-manual/index.en.html)
+This repository in combination with the [Debian Live Project](https://live-team.pages.debian.net/live-manual/html/live-manual/index.en.html)
 builds a Debian Live CD with a serial instead of PC console. 
 It also includes some additional software for my needs.
 
