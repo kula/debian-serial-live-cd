@@ -8,3 +8,5 @@ vim-nox
 less
 ifenslave
 vlan
+efibootmgr
+efivar
