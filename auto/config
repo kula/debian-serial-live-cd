@@ -33,7 +33,7 @@ lb config noauto \
 	--mode debian \
 	--debian-installer live \
 	--archive-areas "main contrib non-free non-free-firmware" \
-	--distribution bookworm \
+	--distribution trixie \
 	--linux-packages "linux-image linux-headers" \
 	--source "${_SOURCE}" \
 	--bootappend-live "boot=live components console=ttyS0,115200" \

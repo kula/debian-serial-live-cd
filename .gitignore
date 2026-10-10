@@ -26,3 +26,4 @@ live-image-source.debian.tar
 live-image-source.live.contents
 live-image-source.live.tar
 source/
+*.iso
